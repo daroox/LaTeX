@@ -1,4 +1,8 @@
 
+
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}  % nice blue!
+%
+\begin{tikzpicture}
 \begin{axis}[%
 width=4.035in,
 height=2.381in,
@@ -6,6 +10,9 @@ at={(1.568in,0.591in)},
 scale only axis,
 xmin=27,
 xmax=32,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  SELECT THE TICKS YOURSELF  %%%%%%%%%%%%%%%%%%%%%%%%%
+xtick ={15,16,17},
+ytick ={0,240,480},
 xlabel style={font=\color{black},font=\large},
 xlabel={Energy(eV)},
 ymin=0,
@@ -15,5 +22,15 @@ ylabel={count (normalized)},
 axis background/.style={fill=white},
 title style={font=\bfseries},
 title={Channel 1},
-legend style={legend cell align=left, align=left, draw=white!15!black}
+%%%%%%%%%%%%%%%%%%%%%%   LEGEND    %%%%%%%%%%%%%%%%%%%%%%%%%%
+legend style={
+at={(0.03,0.5)}, anchor=west, % puts the legend on the left side around the coordinates x=0.03; y =0.5
+legend cell align=left, align=left, draw=black}
+
+legend style={legend cell align=left, align=left, draw=none},   % draw=none means no border around the legend cell
+
+label style={font=\large}, % axis label for x and y 
+tick label style={font=\large} %for both x and y label
 ]
+\addplot [color=mycolor1, dotted, mark=*, mark options={solid, mycolor1}, forget plot]
+  table[row sep=crcr]{%
