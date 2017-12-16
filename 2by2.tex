@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{graphicx,lipsum}
+\begin{document}
+\lipsum[2]
+
+\begin{figure}[h] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.49\linewidth}
+\includegraphics[width=\linewidth]{CH1}
+% \caption{} %individual caption
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\linewidth}
+\includegraphics[width=\linewidth]{CH1.pdf}
+\end{minipage}
+\caption{THE QUICK brown fox jumps over the little lazy dog over the mountain top.}
+\end{figure}
+\lipsum[3]
+
+\end{document}
