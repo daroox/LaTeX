@@ -3,17 +3,17 @@
 \usepackage{pgfplots}
 \usepackage{pgfplots,siunitx}
 %\usetikzlibrary{colorbrewer}
-\usepgfplotslibrary{colorbrewer} %new
+%\usepgfplotslibrary{colorbrewer} %new
 \usepgfplotslibrary{units}
 \pgfplotsset{
-  compat=1.13,
+ % compat=1.13,
   unit markings=parenthesis,
   unit code/.code 2 args={\si{#1#2}},
   mlspectrogram/.style={
     enlargelimits=false, axis on top, use units,
     xlabel=Delay, x unit=\pico\second,
     ylabel=Energy, y unit=\electronvolt,
-    colormap/YlGnBu, %colorbar,%new
+   % colormap/YlGnBu, %colorbar,%new
 	  % colorbar style={ylabel=Power/Energy, y unit=\electronvolt},
   },
 }
@@ -24,7 +24,7 @@
 \begin{axis}[mlspectrogram]
 \addplot % min and max values on following 2 lines are lifted from MATLAB output
  % [point meta min=-6.5466,point meta max=8.0752]
-  graphics[xmin=0,xmax=7,ymin=15,ymax=20]{CH2};
+  graphics[xmin=0,xmax=4,ymin=18,ymax=21]{mydemo};
 \end{axis}
 \end{tikzpicture}
 \end{document}
