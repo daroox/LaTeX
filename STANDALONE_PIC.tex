@@ -1,0 +1,114 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\documentclass[tikz]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{grffile}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{patchplots}
+\usepackage{amsmath}
+
+\begin{document}
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=14cm,
+height=9cm,
+at={(2.08in,0.963in)},
+scale only axis,
+xmin=0,
+xmax=150,
+xtick = {20,40,60,80,100,120,140},
+xlabel style={font=\color{black}},
+xlabel={Mass (amu)},
+ymin=0,
+ymax=10,
+ytick = {2,4,6,8,10},
+ylabel style={font=\color{black}},
+ylabel={Time ($\mu$s)},
+axis background/.style={fill=white},
+%xmajorgrids,
+%ymajorgrids,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left,draw=none}
+]
+\addplot [color=mycolor1, line width=0.5pt, draw=none, mark=*, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+1.00999999999999	0.830000000000013\\
+17.01	3.40000000000001\\
+18.02	3.52000000000001\\
+28.02	4.40000000000001\\
+32	4.69999999999999\\
+83.8	7.756\\
+131.29	9.715\\
+};
+\addlegendentry{measured data}
+
+\addplot [color=blue, line width=1.pt]
+  table[row sep=crcr]{%
+0	0\\
+0.00999999999999091	0.084201800534629\\
+0.0299999999999727	0.145841796614775\\
+0.0500000000000114	0.188280949823309\\
+0.0799999999999841	0.238158656584631\\
+0.120000000000005	0.29168359322955\\
+0.170000000000016	0.347172917471482\\
+0.230000000000018	0.403817649323685\\
+0.300000000000011	0.461192255353694\\
+276	13.9886537124333\\
+280	14.0896561339048\\
+};
+\addlegendentry{single charged $f(x) = 0.87\cdot\sqrt{0.94\cdot x}$}
+
+\addplot [color=red, line width=1.pt]
+  table[row sep=crcr]{%
+0	0\\
+168.83	7.73626238146403\\
+178.13	7.94648219207897\\
+187.81	8.15954114789878\\
+197.88	8.37543420678219\\
+208.35	8.59415402609739\\
+219.23	8.8156912679782\\
+230.53	9.04003486983356\\
+242.26	9.26717228405693\\
+254.44	9.49727632320321\\
+267.07	9.73013652003198\\
+280	9.96289139687076\\
+};
+\addlegendentry{doubly charged $f(x) = 0.87\cdot\sqrt{2\times0.94\cdot x}$}
+
+\node[right, align=left]
+at (axis cs:130,9.4) {Xe};
+\node[right, align=left]
+at (axis cs:85.8,7.756) {$\text{Kr}^\text{+}$};
+\node[right, align=left]
+at (axis cs:34,4.7) {$\text{O}_\text{2}^\text{+}$};
+\node[right, align=left]
+at (axis cs:29.02,4.3) {$\text{N}_\text{2}\text{+}$};
+\node[right, align=left]
+at (axis cs:21.02,3.52) {$\text{H}_\text{2}\text{O}^\text{+}$};
+\node[right, align=left]
+at (axis cs:18.01,3.08) {$\text{Water fragment H}_\text{2}^\text{+}$};
+\node[right, align=left]
+at (axis cs:2.01,0.93) {$\text{Helium H}^\text{+}$};
+\node[right, align=left]
+at (axis cs:262.59,2) {$\text{Xe}_\text{2}\text{@262.59}$};
+%\node[right, align=left]
+%at (axis cs:80.98,2) {$\text{NeKr = 103.98 amu; }  \text{TOF} \approx 8.5\mu\text{s}$};
+%\node[right, align=left]
+%at (axis cs:167.6,2) {$\text{Kr}_\text{2}\text{@167.6}$};
+%\node[right, align=left]
+%at (axis cs:130,7) {a= 0.870502; b= 0.935628;c= 1;fit=a*sqrt(b*x/c);};
+%\node[right, align=left]
+%at (axis cs:10,10) {Fit: $f(x) = 0.87\cdot\sqrt{0.94\cdot x}$ };
+\end{axis}
+\end{tikzpicture}%
+\end{document}
